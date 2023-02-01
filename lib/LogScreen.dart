@@ -146,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
         pressedOpacity: 0.7,
         color: Colors.white,
         onPressed: () {
-          Navigator.of(context).pushNamed('/home');
+          Navigator.popAndPushNamed(context, '/home');
         },
         child: Text(
           'Login',
@@ -230,4 +230,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-

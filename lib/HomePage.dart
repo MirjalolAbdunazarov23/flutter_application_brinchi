@@ -15,22 +15,24 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Home Page',style: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.w600
-        ),),
-        backgroundColor: Color(0x663399ff),
+        title: Text(
+          'Home Page',
+          style: TextStyle(
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w600),
+        ),
+        backgroundColor: Color(0xff3399ff),
       ),
       body: const SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Text(
-            'Salom',
-            style: TextStyle(
-              color: Color(0xff3399ff),
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              'Salom',
+              style: TextStyle(
+                color: Color(0xff3399ff),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
