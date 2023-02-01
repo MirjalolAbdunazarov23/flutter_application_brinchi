@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_brinchi/HomePage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -95,6 +97,22 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget buildForgotPassBtn() {
+    return Container(
+      alignment: Alignment.centerRight,
+      child: MaterialButton(
+          onPressed: () => print('Forgot button pressed'),
+          child: Padding(
+            padding: EdgeInsets.only(right: 0),
+            child: Text(
+              'Forgot Password?',
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
+          )),
+    );
+  }
+
   Widget buildRememberCb() {
     return Container(
       height: 20,
@@ -122,27 +140,27 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget buildLoginBtn() {
     return Container(
-      
+      padding: EdgeInsets.symmetric(vertical: 25),
+      width: double.infinity,
+      child: CupertinoButton(
+        pressedOpacity: 0.7,
+        color: Colors.white,
+        onPressed: () {
+          Navigator.of(context).pushNamed('/home');
+        },
+        child: Text(
+          'Login',
+          style: TextStyle(
+              color: Color(0xff3399ff),
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
+        ),
+        disabledColor: CupertinoColors.quaternarySystemFill,
+        padding: EdgeInsets.all(15),
+        borderRadius: BorderRadius.circular(10),
+      ),
     );
   }
-
-// Widget buildForgotPassBtn() {
-//   return Container(
-//     alignment: Alignment.centerRight,
-//     child: FlatButton(
-//       onPressed: () => print('Forgot button pressed'),
-//       Padding(padding: EdgeInsets.only(right: 0),
-//       child: Text(
-//         'Forgot Password?',
-//         style: TextStyle(
-//           color: Colors.white,
-//           fontWeight: FontWeight.bold
-//         ),
-//       ),
-//       )
-//     ),
-//   );
-// }
 
   @override
   Widget build(BuildContext context) {
@@ -189,12 +207,15 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         buildPassword(),
                         SizedBox(
-                          height: 20,
+                          height: 4,
                         ),
-                        // buildForgotPassBtn(),
+                        buildForgotPassBtn(),
+                        SizedBox(
+                          height: 2,
+                        ),
                         buildRememberCb(),
                         SizedBox(
-                          height: 10,
+                          height: 2,
                         ),
                         buildLoginBtn(),
                       ],
@@ -209,3 +230,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_application_brinchi/HomePage.dart';
 import 'LogScreen.dart';
 
 void main() {
@@ -15,11 +15,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-      useMaterial3: true,
+        useMaterial3: true,
         primarySwatch: Colors.blue,
+
       ),
       debugShowCheckedModeBanner: false,
-      home: const LoginPage() ,
+      home: const LoginPage(),
+      routes: {
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }
